@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --page-background: linear-gradient(90deg, #7d5fff, #7157e2);
+  --container-background: rgba(125, 95, 255, 0.75);
+  --text-color: #ffffff;
+  --secondary-color: #6495ed;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+  background: var(--page-background);
+  color: var(--text-color);
+}
+
+.container {
+  background-color: var(--container-background);
+  /* padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem; */
+  padding: 1.25rem 2.5rem;
+  border-radius: 0.25rem;
+}
+
+.container > h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-control {
+  position: relative;
+  margin: 1.25rem 0 2.5rem;
+  width: 20rem;
+}
+
+.form-control > input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid white;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 1.25rem;
+}
+
+.form-control > input:focus {
+  outline: none;
+  border-bottom-color: lightblue;
+}
+
+.form-control > label {
+  position: absolute;
+  top: 0.1rem;
+  left: 0;
+}
+
+.btn {
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  border-radius: 0.25rem;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  display: inline-block;
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.text {
+  margin-top: 2rem;
+}
+
+.text > a {
+  text-decoration: none;
+  color: lightblue;
+  font-weight: bold;
+}
