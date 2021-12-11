@@ -44,6 +44,7 @@ body {
 
 .form-control > input {
   background-color: transparent;
+  color: var(--text-color);
   border: 0;
   border-bottom: 2px solid white;
   display: block;
@@ -61,6 +62,7 @@ body {
   position: absolute;
   top: 0.1rem;
   left: 0;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .btn {
@@ -91,4 +93,27 @@ body {
   text-decoration: none;
   color: lightblue;
   font-weight: bold;
+}
+
+/* Extra */
+.form-control > input:not(:placeholder-shown):invalid {
+  border-bottom-color: #ec7070;
+}
+.form-control > input:not(:placeholder-shown):valid {
+  border-bottom-color: #30cc70;
+}
+
+.form-control > input:focus + label,
+.form-control > input:not(:placeholder-shown) + label {
+  font-size: 1rem;
+  color: lightblue;
+  transform: translateY(-2rem);
+}
+
+.btn:focus {
+  outline: 2px solid lightblue;
+}
+
+.text > a:focus {
+  outline: none;
 }
