@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-light: #f0ffff;
+  --bg-dark: #5090ff;
+  --page-background: linear-gradient(
+    to bottom,
+    var(--bg-light) 0%,
+    var(--bg-light) 50%,
+    var(--bg-dark) 50%,
+    var(--bg-dark) 100%
+  );
+
+  --text-color: black;
+  --nav-background: white;
+  --transition: 0.75s linear;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Viewport Height */
+  background-image: var(--page-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  background-color: var(--nav-background);
+  padding: 1.25rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width var(--transition);
+}
+
+.nav.active {
+  width: 22rem;
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 0;
+  transition: width var(--transition);
+  pointer-events: none;
+}
+
+.nav.active .nav-list {
+  width: 100%;
+}
+
+.nav-item {
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.nav.active .nav-item {
+  opacity: 1;
+  transform: rotate(360deg);
+}
+
+.nav-link {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.icon {
+  background-color: white;
+  border: 0;
+  padding: 0;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.line {
+  background-color: var(--bg-dark);
+  width: 1.25rem;
+  height: 2px;
+  position: relative;
+  left: 0.3rem;
+  transition: transform var(--transition);
+}
+
+.line1 {
+  top: 0.5rem;
+}
+
+.nav.active .line1 {
+  transform: rotate(-765deg) translateY(calc(-0.5rem - 2px));
+}
+
+.line2 {
+  bottom: 0.5rem;
+}
+
+.nav.active .line2 {
+  transform: rotate(765deg) translateY(calc(0.5rem + 2px));
+}
